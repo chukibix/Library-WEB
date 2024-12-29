@@ -1,0 +1,44 @@
+// colors
+$main: #BDFF00;
+$extra: #ABB981;
+$light: #ECF5CE;
+$dark: #005257;
+
+// fonts
+$fontText: Helvetica, Arial, sans-serif; // iceberg
+$fontTitle: "Imprint MT Shadow", Georgia, serif;
+
+// spacings
+$pad: 7px;
+
+// border
+$radius: 7px;
+@function bord($width: 2px, $s: inset, $c: $dark){
+  @return $width $s $c;
+}
+
+// medias
+$small: "max-width: 300px";
+$phone: "min-width: 301px";
+$bigPhone: "min-width: 500px";
+$tablet: "min-width: 768px";
+$laptop: "min-width: 992px";
+$desktop: "min-width: 1200px";
+$huge: "min-width: 1800px";
+
+// optimizers of code
+@mixin dimensions($w: auto, $h: auto){
+  width: $w;
+  height: $h;
+}
+@mixin inputImage($top, $left){
+  position: absolute;
+  top: $top; 
+  left: $left; 
+}
+@mixin responsive-size($sm, $mid, $big, $def: $sm){
+  font-size: $def;
+  @include media($small){ font-size: $sm; }
+  @include media($bigPhone){ font-size: $mid; }
+  @include media($laptop){ font-size: $big; }
+}

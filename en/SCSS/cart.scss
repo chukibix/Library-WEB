@@ -1,0 +1,171 @@
+@import "./helpers/import";
+
+#product__wrapper {
+  @include flex();
+  justify-content: space-around;
+}
+// button to quickly go to checkout
+.forCheck {
+  width: 100%;
+}
+.goToCheckout {
+  background-color: $extra;
+  color: $dark;
+  height: auto;
+  font: {
+    family: $fontTitle;
+    weight: 900;
+    size: 20px;
+  }
+
+  border: bord(1px, $c: $main);
+  border-radius: $radius;
+
+  text-align: center;
+  @include transition(200ms);
+  cursor: pointer;
+
+  &:hover {
+    background-color: $dark;
+    color: $main;
+    border-color: $main;
+  }
+  position: absolute;
+  left: 1.5%;
+  top: 47px;
+  width: auto;
+
+  @include media($bigPhone) {
+    left: 3px;
+  }
+  writing-mode: vertical-lr;
+  @include transform(rotate(180deg));
+
+  a {
+    display: block;
+    padding: $pad * 1.5;
+  }
+}
+
+// item's card --------------------------
+#cart-items {
+  padding: $pad 0;
+  @include flex;
+  justify-content: space-around;
+  align-content: space-around;
+}
+.item {
+  color: $dark;
+  background-color: $extra;
+  border: bord(1px, $c: $main);
+  width: 97%;
+  margin: $pad 0;
+  @include media($bigPhone) {
+    margin: $pad;
+  }
+  overflow: hidden;
+  border-radius: $radius;
+
+  @include media($bigPhone) {
+    width: 350px;
+  }
+
+  .labels {
+    font: {
+      size: 20px;
+      weight: bold;
+    }
+  }
+
+  .price {
+    font: {
+      size: 22px;
+      weight: bold;
+    }
+  }
+  .image img {
+    width: 100%;
+    height: auto;
+    @include media($bigPhone) {
+      height: 430px;
+    }
+  }
+  .quantity {
+    @include flex;
+
+    .quanDesign {
+      @include flex(nowrap);
+      justify-content: flex-end;
+
+      .quantity__modifier {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: $extra;
+        border: bord(1px, solid, $dark);
+        height: 40px;
+        font-weight: bold;
+        font-size: 1rem;
+        @include transition(200ms);
+      }
+      .quantity__modifier:not(input.quantity__modifier) {
+        cursor: pointer;
+
+        &:hover{
+          background-color: $dark;
+          color: $main;
+        }
+      }
+      .quantity__modifier:first-child {
+        border-radius: $radius 0 0 $radius;
+      }
+      input.quantity__modifier {
+        width: 60px;
+        border-width: 1px 0;
+      }
+      .quantity__modifier:last-child {
+        border-radius: 0 $radius $radius 0;
+      }
+    }
+  }
+
+  article:not(.image) {
+    @include perfect_center;
+  }
+
+  article {
+    padding: 10px 0;
+  }
+  /*--- REMOVE BUTTON ---*/
+  #remove {
+    @include transition(200ms);
+    font: {
+      weight: 900;
+      size: 30px;
+    }
+    cursor: pointer;
+
+    &:hover {
+      background: $dark;
+      color: $main;
+    }
+  }
+  article[class] {
+    @include flex;
+    justify-content: space-between;
+    border-bottom: bord(1px, $c: $dark);
+    padding: 10px;
+
+    div:not(.labels, .quanDesign div) {
+      text-align: right;
+      flex-grow: 1;
+    }
+  }
+  .description, .one-price{
+    justify-content: space-around !important;
+  }
+  article[class$='-price']{ 
+    display: block !important;
+
+  }
+}
+// item's card end--------------------------

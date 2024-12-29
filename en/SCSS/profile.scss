@@ -1,0 +1,66 @@
+@import "./helpers/import";
+
+main{
+  background-image: url(../../media/images/bg/bg-circle-scatter.svg);
+  background-size: cover;
+}
+main .aTitle{
+  @include responsive_size(32px, 48px, 56px, 40px);
+  color: $dark;
+  padding: 30px 0; margin: 0 0 $pad*3;
+  border-bottom: bord(4px, $main)
+}
+main .container{
+  background-color: $extra;
+  padding: 0 $pad $pad*3; 
+  border: bord(1px, $main);
+  border-radius: $radius;
+
+  section:not(section:last-child){ margin-bottom: $pad; }
+
+  // profile icon
+  #icon{
+    @include dimensions(200px, 200px);
+    @include media($small){ @include dimensions(130px, 130px); }
+    @include media($tablet){ @include dimensions(280px, 280px); }
+    @include perfect_center;
+
+    border: bord(1px);
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: grey;
+    margin: $pad*3 auto;
+  }
+
+  // fullname
+  #fullname{
+    text-align: center;
+    color: $dark;
+    font: { family: $fontTitle; weight: bold; } 
+    @include responsive_size(16px, 28px, 32px, 22px);
+  }
+
+  tr th{
+    color: $dark;
+    text-align: left;
+    font-weight: bold;
+    @include responsive_size(16px, 24px, 28px, 20px);
+  }
+  input{ 
+    @include dimensions(100%, 32px);
+    @include responsive_size(12px, 18px, 20px, 16px);
+    padding: $pad;
+    border: bord();
+    border-radius: $radius;
+  }
+  #balance{
+    td{ position: relative; }
+    img{ 
+      position: absolute; 
+      top: 5px;
+      left: 4px;
+      @include dimensions(24px, 24px);
+    }
+    input{ padding-left: 30px; }
+  }
+}

@@ -1,0 +1,216 @@
+@import "./helpers/import";
+
+main{ 
+  color: $dark; 
+  background-image: url(../../media/images/bg/bg-animated-shapes.svg);
+}
+// error message style
+.error{
+  color: crimson;
+  font: { weight:bold; }
+  margin: 5px;
+  @include transform(translateY(-8px));
+
+  font-size: 15px;
+  @include media($small){ font-size: 12px; }
+  @include media($bigPhone){ font-size: 18px; }
+}
+
+main #login-form{
+  font-family: 'Nunito Sans', sans-serif;
+  position: relative;
+  @include dimensions(100%);
+  @include perfect_center;
+  align-items: normal;
+  
+  h2{
+  margin: 0;
+    padding: 30px 0;
+    font-size: 50px; 
+    @include media($small){ font-size: 38px; }
+  }
+  .reset-pass h2{ 
+    font-size: 42px;
+    @include media($small){ font-size: 13vw; }
+    @include media($bigPhone){ font-size: 50px; }
+  }
+
+  input, button{
+    border: none;
+    outline: none;
+    background: none;
+  }
+
+  .form{
+    background-color: $extra;
+    padding: 20px $pad;
+    width: 100%;
+    position: relative;
+    border-radius: $radius;
+    border: bord(1px);
+    
+    @include media($tablet){ width: 650px; padding: 20px}
+
+    span, input, button, select, a{
+      font-size: 15px;
+      @include media($small){ font-size: 12px; }
+      @include media($bigPhone){ font-size: 18px; }
+    }
+  }
+
+  .take-info{
+    label{ 
+      display: block; 
+      position: relative; 
+      margin-bottom: 18px;
+      &:last-child{ margin-bottom: $pad; }
+    }
+    label span{
+      background-color: $extra;
+      font-weight: bold;
+      padding: 0 calc($pad/2);
+      position: absolute;
+      bottom: $pad; 
+      left: calc($pad/2) + 2px; // padding + borderWidth
+
+      @include transition(300ms);
+    }
+    label input, .country select, .phone select{
+      display: block;
+      background-color: transparent;
+      position: relative;
+      z-index: 1;
+      border: bord(1px);
+      border-radius: 3px;
+      width: 100%;
+      padding: $pad;
+      @include transition(box-shadow 300ms);
+      
+      &:focus{
+        outline: bord(1px);
+        box-shadow: 0px 0px 4px 2px $main;
+      }
+
+      &:focus ~ span, &:valid ~ span{
+        bottom: 26px;
+        z-index: 2;
+        font-size: 12px;
+
+        @include media($small){ font-size:9px; bottom:24px; }
+        @include media($bigPhone){ font-size:15px; }
+      }
+    }
+  }
+
+  // country and dateOfBirth container
+  .country-birth{
+    @include flex(column);
+    @include media($bigPhone){ flex-direction: row; }
+    margin-bottom: 18px;
+
+    .birth{
+      @include media($bigPhone){ margin: 0; }
+      input{ 
+        padding: $pad*2 $pad; 
+        @include media($bigPhone){
+          border-bottom-right-radius: 0;
+          border-top-right-radius: 0;
+          border-right: none;
+        }
+      }//
+    }
+    .country span, .birth span{
+      top: -$pad - 1;
+      z-index: 2;
+      height: fit-content;
+      font-size: 12px;
+      
+      @include media($small){ font-size:9px; top: -$pad + 2; }
+      @include media($bigPhone){ top: -$pad - 3; font-size:15px; }
+    }
+    .country{
+      flex-grow: 1;
+      margin: 0 !important;
+
+      select{
+        display: block;
+        height: 40px;
+        font-weight: bold;
+
+        @include media($bigPhone){
+          padding: $pad*2+1 $pad;
+          height: auto;
+          border-bottom-left-radius: 0;
+          border-top-left-radius: 0;
+        }
+      }
+    }//
+  }
+
+  // phone number and country code container
+  .phone{
+    @include flex(nowrap);
+    margin-bottom: 18px;
+
+    label{ 
+      flex-grow: 1;
+      margin: 0 !important;
+    }
+    input{ 
+      height: 100%;
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+    }
+    select{
+      width: auto !important;
+      border-right: none !important;
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+      padding: $pad 0 !important;
+    }//
+  }
+  // some lil styling for options inside select tags
+  .country-birth select, .phone select{
+    option{
+      color: $dark;
+      background-color: $extra;
+    }
+    color: $dark;
+    cursor: pointer;
+  }
+
+  // register and login buttons container
+  .submit {
+    @include flex(nowrap, column);
+    justify-content: space-around;
+    margin-top: 20px;
+    @include media($bigPhone){
+      flex-direction: row;
+    }
+
+    button{
+      display: block;
+      background-color: $dark;
+      color: $main;
+      font: { weight:500; } 
+      padding: $pad;
+
+      border-radius: $radius;
+      flex-grow: 1;
+      cursor: pointer;
+      margin-bottom: $pad;
+
+      @include media($bigPhone){
+        width: 50%;
+        &:not(&:last-child){ margin-right: $pad; }
+      }
+    }//
+  }
+  .forgot-pass{
+    text-align: center;
+    font: { size: 14px; weight: bold; }
+    cursor: pointer;
+    &:hover{ text-decoration: underline; }
+  }
+  .other-option{ text-align: center; }
+}

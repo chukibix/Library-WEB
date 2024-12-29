@@ -1,0 +1,64 @@
+.aTitle {
+  color: #005257 !important;
+}
+
+main .manage_container{
+  background-color: #abb981;
+}
+
+main .aTitle {
+  text-align: center;
+}
+
+main form {
+  text-align: center;
+  margin-top: 20px;
+}
+
+input[type="text"],
+input[type="submit"] {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px outset #005257;
+}
+input[type="text"]:focus {
+  outline: 2px groove #bdff00;
+}
+
+input[type="submit"] {
+  background-color: #005257;
+  color: white;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  width: 1200px;
+}
+.table__wrapper {
+  margin: 20px auto 0;
+  overflow-x: auto;
+}
+.query__links a {
+  display: block;
+  margin: 7px;
+  text-decoration: underline;
+  color: rgb(6, 83, 160);
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+td {
+  color: #005257;
+}
+
+th {
+  background-color: #005257;
+  color: white;
+}

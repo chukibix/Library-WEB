@@ -1,0 +1,84 @@
+main {
+  padding: 7px 0;
+  background-image: url(../../media/images/bg/rect-light-bg.svg);
+  color: #ECF5CE;
+}
+@media only screen and (min-width: 768px) {
+  main {
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  main .writing {
+    width: 78%;
+  }
+}
+main .writing h1 {
+  text-align: center;
+  font-size: 50px;
+}
+main .writing p::first-letter {
+  font-size: 40px;
+  font-family: "Imprint MT Shadow", Georgia, serif;
+}
+main .writing p {
+  padding: 0 7px;
+  text-indent: 20px;
+}
+@media only screen and (max-width: 300px) {
+  main .writing p {
+    font-size: 13px;
+  }
+}
+@media only screen and (min-width: 500px) {
+  main .writing p {
+    font-size: 19px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  main .writing p {
+    font-size: 22px;
+  }
+}
+main .writing p span {
+  color: red;
+  font-weight: bold;
+}
+
+main .illustrations {
+  color: #005257;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+@media only screen and (min-width: 768px) {
+  main .illustrations {
+    width: 22%;
+  }
+}
+main .illustrations .img-card {
+  background-color: #ECF5CE;
+  width: 150px;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 1px inset #005257;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0 7px 14px;
+  cursor: pointer;
+}
+main .illustrations .img-card div img {
+  width: 100%;
+  height: 200px;
+}
+main .illustrations .img-card article {
+  text-align: center;
+  padding: 7px 0;
+}/*# sourceMappingURL=about-us.css.map */

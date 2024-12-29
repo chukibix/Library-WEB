@@ -1,0 +1,69 @@
+@import "./helpers/import";
+
+.container{ 
+  @include flex(); 
+  
+  @include media($tablet){
+    flex-wrap: wrap;
+  }
+}
+
+main h1{ font-size: 50px; }
+
+main .search-result{
+  background-color: $extra;
+  color: $dark;
+  padding: 0;
+  overflow: hidden;
+  margin-bottom: $pad;
+  border-radius: $radius;
+  border: bord(1px, $main);
+  position: relative;
+
+  @include flex(row, nowrap);
+  align-items: flex-start;
+  flex: 1 350px;
+
+  @include media("max-width: 383px"){ flex-basis: 200px; }
+  @include media($small){ display: block; }
+
+  #result-title{
+    font: { size:18px; weight:bold; }
+    text-transform: capitalize;
+    color: $dark;
+    background-color: $extra;
+    border-radius: $radius;
+    padding: $pad;
+  }
+
+  .result-img{
+    flex-shrink: 0;
+    @include dimensions(120px, 170px);
+    @include media($small){ @include dimensions(100%); }
+
+    img { 
+      @include dimensions(100%, 170px); 
+      @include media($small){ @include dimensions(100%); }
+    }
+  }
+  .result-infos{
+    list-style-type: none;
+    padding-left: $pad;
+    font: { weight:bold; size:15px; }
+    flex-grow: 1;
+
+    li:not(li:last-child){ margin-bottom:4px; }
+    @include media($small){ li:last-child{ padding-bottom: $pad*4; } }
+  }
+
+  .result-details{
+    position: absolute;
+    right: $pad;
+    bottom: $pad;
+
+    a{
+      padding: { left: $pad; top: $pad; }
+      &:hover{ text-decoration: underline; }
+    }
+  }
+}

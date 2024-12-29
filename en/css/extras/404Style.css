@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Poppins:wght@200;300;400;500&display=swap");
+
+main {
+  margin: 0;
+  padding: 0;
+  font-family: poppins;
+  background-image: none;
+}
+
+.page-not-found img {
+  height: 350px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.page-not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.page-not-found h1 {
+  color: #606c38;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.page-not-found p {
+  color: #606c38;
+  font-size: 1rem;
+  width: 60%;
+  text-align: center;
+  margin: 5px;
+  font-weight: 300;
+}
+
+.page-not-found p a {
+  color: #606c38;
+  font-weight: 600;
+  text-decoration: none;
+}
+.page-not-found p a:hover {
+  zoom: 110%;
+}
+
+.page-not-found .btn-home {
+  width: 140px;
+  height: 40px;
+  margin: 10px;
+  text-align: center;
+  background-color: #606c38;
+  color: white;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  letter-spacing: 1px;
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn-home:hover {
+  background-color: #93987c;
+  transition: all ease 0.2s;
+}
+
+@media (max-width: 900px) {
+  .page-not-found p {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-not-found {
+    width: 100%;
+  }
+  .page-not-found p {
+    width: 90%;
+  }
+  .page-not-found img {
+    height: auto;
+  }
+  .page-not-found h1 {
+    font-size: 1.4rem;
+  }
+  nav {
+    padding: 10px;
+  }
+}

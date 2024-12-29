@@ -1,0 +1,55 @@
+@mixin transform($value) {
+  transform: $value;
+  -o-transform: $value;
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  -ms-transform: $value;
+}
+@mixin filter($value) {
+  filter: $value;
+  -webkit-filter: $value;
+}
+@mixin transition($value) {
+  transition: $value;
+  -webkit-transition: $value;
+  -o-transition: $value;
+  -moz-transition: $value;
+}
+@mixin animation($value) {
+  animation: $value;
+  -webkit-animation: $value;
+  -o-animation: $value;
+  -moz-animation: $value;
+}
+@mixin linear_gradient($color_scheme) {
+  background: linear-gradient($color_scheme);
+  background: -ms-linear-gradient($color_scheme);
+  background: -moz-linear-gradient($color_scheme);
+  background: -o-linear-gradient($color_scheme);
+  background: -webkit-linear-gradient($color_scheme);
+}
+@mixin flex($direction: row, $wrap: wrap) {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: $direction $wrap;
+}
+@mixin grid {
+  display: grid;
+  display: -ms-grid;
+  display: -moz-grid;
+}
+@mixin box_size($value: border-box) {
+  box-sizing: $value;
+  -webkit-box-sizing: $value;
+  -moz-box-sizing: $value;
+}
+@mixin perfect_center{
+  @include flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin media($breakpoint) {
+  @media only screen and ($breakpoint) {
+    @content;
+  }
+}

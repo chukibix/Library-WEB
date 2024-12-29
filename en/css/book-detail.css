@@ -1,0 +1,265 @@
+main {
+  background-color: #005257;
+  background-image: url(../../media/images/bg/bg-wavy.svg);
+  background-size: contain;
+}
+
+main .container {
+  background-color: #ABB981;
+  color: #005257;
+  border: 2px inset #BDFF00;
+  border-radius: 7px;
+  padding: 7px;
+}
+main .container #up {
+  display: block;
+}
+@media only screen and (min-width: 768px) {
+  main .container #up {
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+  }
+}
+main .container #book-title {
+  width: 100%;
+  text-transform: capitalize;
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding: 15px 0;
+  border-bottom: 4px #BDFF00 #005257;
+}
+@media only screen and (max-width: 300px) {
+  main .container #book-title {
+    font-size: 10vw;
+  }
+}
+@media only screen and (min-width: 500px) {
+  main .container #book-title {
+    font-size: 45px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  main .container #book-title {
+    font-size: 55px;
+  }
+}
+main .container #book-cover {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 7px;
+}
+@media only screen and (min-width: 768px) {
+  main .container #book-cover {
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0 7px 7px 0;
+  }
+}
+main .container #book-cover img {
+  border: 2px inset #005257;
+  border-radius: 7px;
+  width: 265px;
+  height: 370px;
+}
+@media only screen and (max-width: 300px) {
+  main .container #book-cover img {
+    width: 100%;
+    height: auto;
+  }
+}
+main .container #book-infos li {
+  list-style-type: none;
+  padding-bottom: 7px;
+}
+main .container #book-infos li:last-child {
+  font-weight: bold;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+main .container #book-infos b {
+  text-decoration: underline;
+}
+main .container #book-infos #form-fav {
+  padding-bottom: 7px;
+}
+main .container #book-infos #form-fav button {
+  all: unset;
+}
+main .container #book-infos #form-fav button svg {
+  position: relative;
+  top: 3px;
+}
+main .container #book-infos #form-fav button, main .container #book-infos #form-fav label {
+  cursor: pointer;
+}
+main .container #book-preferences {
+  width: 100%;
+  border-bottom: 4px #BDFF00 #005257;
+  padding-bottom: 7px;
+  margin-bottom: 7px;
+}
+@media only screen and (min-width: 768px) {
+  main .container #book-preferences #form-cart {
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row nowrap;
+  }
+}
+main .container #book-preferences span {
+  font-weight: bolder;
+}
+main .container #book-preferences input {
+  background-color: #ECF5CE;
+  border: 2px inset #005257;
+  border-radius: 7px;
+  padding: 7px 3.5px;
+}
+main .container #book-preferences button {
+  display: block;
+  background-color: #005257;
+  color: #BDFF00;
+  font-weight: 500;
+  padding: 7px;
+  text-transform: uppercase;
+  flex-grow: 1;
+  width: 100%;
+  border: 2px inset #005257;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-top: 7px;
+}
+@media only screen and (min-width: 768px) {
+  main .container #book-preferences button {
+    width: -moz-fit-content;
+    width: fit-content;
+    flex-grow: 1;
+    margin-left: 7px;
+    margin-top: 0;
+  }
+}
+main .container li, main .container span, main .container input, main .container label, main .container p, main .container button {
+  font-size: 16px;
+}
+@media only screen and (max-width: 300px) {
+  main .container li, main .container span, main .container input, main .container label, main .container p, main .container button {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 500px) {
+  main .container li, main .container span, main .container input, main .container label, main .container p, main .container button {
+    font-size: 19px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  main .container li, main .container span, main .container input, main .container label, main .container p, main .container button {
+    font-size: 21px;
+  }
+}
+main .container #form-rate, main .container #comment-rate {
+  padding-bottom: 7px;
+}
+main .container #form-rate button, main .container #comment-rate button {
+  all: unset;
+  cursor: pointer;
+  border-right: 2px inset #005257;
+  padding: 7px;
+}
+main .container #form-rate button:last-child, main .container #comment-rate button:last-child {
+  border-right: none;
+}
+main .container #form-rate button:first-child, main .container #comment-rate button:first-child {
+  padding-left: 0;
+}
+main .container #form-rate svg, main .container #comment-rate svg {
+  position: relative;
+  top: 2px;
+}
+main .container #comments #comment-text {
+  background-color: #ECF5CE;
+  width: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  padding: 7px;
+  border-radius: 7px;
+  border: 1px inset #005257;
+  padding-right: 31px;
+  resize: vertical;
+}
+main .container #comments #comment-text:focus {
+  outline: 1px inset #005257;
+  box-shadow: 0px 0px 4px 2px #BDFF00;
+}
+main .container #comments #form-comment {
+  position: relative;
+}
+main .container #comments #comment-sub {
+  all: unset;
+  cursor: pointer;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+main .container #comments .aComment {
+  position: relative;
+}
+main .container #comments .aComment b {
+  font-size: 14px;
+  background-color: #ABB981;
+  position: absolute;
+  top: -7px;
+  left: 7px;
+  padding: 0 3px;
+}
+@media only screen and (max-width: 300px) {
+  main .container #comments .aComment b {
+    font-size: 11px;
+  }
+}
+main .container #comments .aComment b span {
+  color: crimson;
+  font-size: 14px;
+}
+@media only screen and (max-width: 300px) {
+  main .container #comments .aComment b span {
+    font-size: 11px;
+  }
+}
+main .container #comments .aComment p {
+  border: 2px inset #005257;
+  border-radius: 3.5px 21px;
+  padding: 21px 7px;
+}
+main .container #comments #comment-rate {
+  background-color: #ABB981;
+  position: absolute;
+  padding: 0 3px;
+  bottom: -7px;
+  left: 21px;
+}
+main .container #comments #comment-rate button {
+  border: none;
+  padding: 0;
+}
+main .container #comments #comment-rate strong {
+  padding-right: 7px;
+  font-size: 14px;
+}
+@media only screen and (max-width: 300px) {
+  main .container #comments #comment-rate strong {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 500px) {
+  main .container #comments #comment-rate strong {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  main .container #comments #comment-rate strong {
+    font-size: 14px;
+  }
+}
+main .container #comments #comment-rate strong:last-child {
+  padding: 0;
+}/*# sourceMappingURL=book-detail.css.map */

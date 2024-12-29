@@ -1,0 +1,418 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+::-moz-selection {
+  background: #005257;
+  color: #BDFF00;
+}
+
+::selection {
+  background: #005257;
+  color: #BDFF00;
+}
+
+body {
+  overflow-x: hidden;
+  color: #005257;
+  background-color: #ECF5CE;
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+main {
+  color: #ECF5CE;
+  padding: 30px 7px;
+  background-image: url(../../media/images/bg/background.svg);
+  background-size: cover;
+}
+
+.aTitle {
+  text-shadow: 0px 0px 1px #BDFF00;
+  font-family: "Imprint MT Shadow", Georgia, serif;
+  font-weight: 500;
+  text-align: center;
+}
+
+header {
+  background-color: #ABB981;
+  padding: 7px;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+header #logo img {
+  width: 80px;
+  height: auto;
+}
+header #bigTitle {
+  font-size: 13vw;
+  order: 3;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+header #accessibility {
+  width: 150px;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+header #accessibility div {
+  cursor: pointer;
+  text-align: center;
+}
+header #accessibility div img {
+  width: 50px;
+  height: auto;
+}
+header #accessibility #language {
+  position: relative;
+}
+header #accessibility #language #langs {
+  background: #ECF5CE;
+  position: absolute;
+  right: 0;
+  z-index: 10;
+  border-radius: 2px;
+  width: 160px;
+  border: 1px inset #005257;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 200ms;
+  -webkit-transition: opacity 200ms;
+  -o-transition: opacity 200ms;
+  -moz-transition: opacity 200ms;
+}
+header #accessibility #language #langs::before {
+  content: "";
+  border-left: 7px transparent #005257;
+  border-right: 7px transparent #005257;
+  border-top: 7px transparent #005257;
+  border-bottom: 7px #ECF5CE #005257;
+  position: absolute;
+  top: -14px;
+  right: 7px;
+}
+header #accessibility #language:hover #langs {
+  visibility: visible;
+  opacity: 1;
+}
+header #accessibility #language #langs div {
+  padding: 11.2px 17.5px;
+  font-weight: bold;
+  text-align: left;
+}
+header #accessibility #language #langs div img {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  top: 5.5px;
+}
+header #accessibility #language #langs div span {
+  font-size: 16px;
+}
+header #accessibility #language #langs div:hover {
+  background-color: #ABB981;
+}
+header #accessibility #language #langs div:not(header #accessibility #language #langs div:last-child) {
+  border-bottom: 1px inset #005257;
+}
+
+#navBar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  border-bottom: 4px inset #BDFF00;
+  padding: 7px 0;
+  background-color: #ABB981;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+#navBar section div {
+  font-size: 20px;
+  font-weight: bold;
+  border-right: 2px inset #005257;
+  padding: 0 7px;
+  cursor: pointer;
+}
+#navBar section div img {
+  width: 25px;
+  height: auto;
+}
+#navBar #leftNav span {
+  display: none;
+  position: relative;
+  bottom: 2px;
+}
+#navBar #rightNav, #navBar #leftNav {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row nowrap;
+}
+#navBar #coinBalance label {
+  position: relative;
+  bottom: 3px;
+}
+#navBar #sideMenu {
+  border: none;
+}
+
+#searchLayer {
+  background-color: rgba(0, 82, 87, 0.7);
+  position: fixed;
+  top: 0;
+  z-index: 11;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 300ms;
+  -webkit-transition: opacity 300ms;
+  -o-transition: opacity 300ms;
+  -moz-transition: opacity 300ms;
+}
+#searchLayer h1 {
+  background-color: #ABB981;
+  font-size: 40px;
+  margin: 0;
+  padding: 30px 0;
+  border-bottom: 4px #BDFF00 #005257;
+}
+#searchLayer span {
+  position: absolute;
+  z-index: 12;
+  top: 0;
+  right: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#searchLayer .searchPart {
+  position: relative;
+  padding-top: 10px;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+#searchLayer .searchPart button[type=submit] {
+  all: unset;
+  background-color: #ECF5CE;
+  padding: 0 7px;
+  height: 36px;
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border: 2px inset #005257;
+  border-left: none;
+}
+#searchLayer img {
+  width: 25px;
+  height: auto;
+  position: absolute;
+  top: 17px;
+  left: 7px;
+  cursor: pointer;
+}
+#searchLayer label {
+  height: -moz-fit-content;
+  height: fit-content;
+  flex-grow: 1;
+}
+#searchLayer input {
+  display: block;
+  background-color: #ECF5CE;
+  color: #005257;
+  font-size: 12px;
+  padding-left: 35px;
+  width: 100%;
+  height: 40px;
+  border-radius: 7px;
+  border-color: #005257;
+  border-right: none;
+  transition: box-shadow 300ms;
+  -webkit-transition: box-shadow 300ms;
+  -o-transition: box-shadow 300ms;
+  -moz-transition: box-shadow 300ms;
+}
+#searchLayer input:focus {
+  box-shadow: 0px 0px 4px 2px #BDFF00;
+}
+#searchLayer select {
+  display: block;
+  background-color: #ECF5CE;
+  color: #005257;
+  margin: 5px auto 0;
+  padding: 3px;
+  font-size: 20px;
+  font-weight: bold;
+  height: 40px;
+  border: 2px inset #005257;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+#menu {
+  background-color: #ABB981;
+  position: fixed;
+  top: 0;
+  z-index: 11;
+  width: 100%;
+  height: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  transition: 500ms;
+  -webkit-transition: 500ms;
+  -o-transition: 500ms;
+  -moz-transition: 500ms;
+}
+#menu img {
+  width: 25px;
+  height: 25px;
+}
+#menu section {
+  background-color: #ABB981;
+  font-size: 45px;
+  padding: 20px 0;
+  border-bottom: 4px #BDFF00 #005257;
+}
+#menu #closeMenu {
+  position: absolute;
+  right: 15px;
+  padding: 0 7px;
+  font-size: 40px;
+  cursor: pointer;
+}
+#menu a {
+  display: block;
+  background-color: #ECF5CE;
+  text-align: center;
+  font-size: 24px;
+  width: 100%;
+  padding: 7px;
+  border-bottom: 2px inset #ABB981;
+}
+#menu a:last-child {
+  border: none;
+}
+#menu a:hover {
+  background-color: #ABB981;
+}
+
+footer {
+  background-color: #ABB981;
+  padding: 7px 14px;
+  border-top: 4px solid #BDFF00;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
+footer h1 {
+  margin: 0;
+  font-size: 33px;
+  text-align: left !important;
+}
+footer img {
+  width: 40px;
+  height: 40px;
+  transform: translateY(10px);
+  -o-transform: translateY(10px);
+  -webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+}
+footer ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+footer ul li {
+  font-weight: 600;
+  font-size: 20px;
+}
+footer #rightFoot a:hover {
+  -webkit-text-decoration: underline #005257;
+          text-decoration: underline #005257;
+}
+
+@media only screen and (max-width: 300px) {
+  header #logo img {
+    width: 60px;
+    height: auto;
+  }
+  header #accessibility {
+    width: 100px;
+    height: auto;
+  }
+  header #accessibility div img {
+    width: 35px;
+    height: auto;
+  }
+}
+@media only screen and (min-width: 500px) {
+  header #logo img {
+    width: 100px;
+    height: auto;
+  }
+  header #bigTitle {
+    font-size: 70px;
+  }
+  #navBar #leftNav span {
+    display: initial;
+  }
+  #searchLayer .searchPart button[type=submit], #searchLayer input {
+    font-size: 16px;
+  }
+  #menu {
+    width: 0;
+    height: 100%;
+    right: 0;
+  }
+  footer {
+    flex-direction: row;
+  }
+}
+@media only screen and (min-width: 768px) {
+  header #bigTitle {
+    width: auto;
+  }
+  header #accessibility {
+    order: 3;
+  }
+  #searchLayer .searchPart button[type=submit], #searchLayer input {
+    font-size: 20px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  header #bigTitle {
+    font-size: 90px;
+  }
+  #searchLayer .searchPart button[type=submit], #searchLayer input {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #menu {
+    left: 0;
+  }
+}/*# sourceMappingURL=main.css.map */

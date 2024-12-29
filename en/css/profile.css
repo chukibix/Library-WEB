@@ -1,0 +1,142 @@
+main {
+  background-image: url(../../media/images/bg/bg-circle-scatter.svg);
+  background-size: cover;
+}
+
+main .aTitle {
+  font-size: 40px;
+  color: #005257;
+  padding: 30px 0;
+  margin: 0 0 21px;
+  border-bottom: 4px #BDFF00 #005257;
+}
+@media only screen and (max-width: 300px) {
+  main .aTitle {
+    font-size: 32px;
+  }
+}
+@media only screen and (min-width: 500px) {
+  main .aTitle {
+    font-size: 48px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  main .aTitle {
+    font-size: 56px;
+  }
+}
+
+main .container {
+  background-color: #ABB981;
+  padding: 0 7px 21px;
+  border: 1px #BDFF00 #005257;
+  border-radius: 7px;
+}
+main .container section:not(section:last-child) {
+  margin-bottom: 7px;
+}
+main .container #icon {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  border: 1px inset #005257;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: grey;
+  margin: 21px auto;
+}
+@media only screen and (max-width: 300px) {
+  main .container #icon {
+    width: 130px;
+    height: 130px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  main .container #icon {
+    width: 280px;
+    height: 280px;
+  }
+}
+main .container #fullname {
+  text-align: center;
+  color: #005257;
+  font-family: "Imprint MT Shadow", Georgia, serif;
+  font-weight: bold;
+  font-size: 22px;
+}
+@media only screen and (max-width: 300px) {
+  main .container #fullname {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 500px) {
+  main .container #fullname {
+    font-size: 28px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  main .container #fullname {
+    font-size: 32px;
+  }
+}
+main .container tr th {
+  color: #005257;
+  text-align: left;
+  font-weight: bold;
+  font-size: 20px;
+}
+@media only screen and (max-width: 300px) {
+  main .container tr th {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 500px) {
+  main .container tr th {
+    font-size: 24px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  main .container tr th {
+    font-size: 28px;
+  }
+}
+main .container input {
+  width: 100%;
+  height: 32px;
+  font-size: 16px;
+  padding: 7px;
+  border: 2px inset #005257;
+  border-radius: 7px;
+}
+@media only screen and (max-width: 300px) {
+  main .container input {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 500px) {
+  main .container input {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  main .container input {
+    font-size: 20px;
+  }
+}
+main .container #balance td {
+  position: relative;
+}
+main .container #balance img {
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+}
+main .container #balance input {
+  padding-left: 30px;
+}/*# sourceMappingURL=profile.css.map */

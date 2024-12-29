@@ -1,0 +1,188 @@
+@import "./helpers/import";
+
+main{
+  background-color: $dark;
+  background-image: url(../../media/images/bg/bg-wavy.svg);
+  background-size: contain;
+}
+main .container{
+  background-color: $extra;
+  color: $dark;
+  border: bord($c: $main);
+  border-radius: $radius;
+  padding: $pad;
+
+  #up{ 
+    display: block;
+    @include media($tablet){ @include flex(row, nowrap); }
+  }
+
+  #book-title{ 
+    width: 100%;
+    text-transform: capitalize;
+    @include responsive-size(10vw, 45px, 55px, 30px);
+
+    margin: { top:0; bottom:10px; } 
+    padding: 15px 0;
+    border-bottom: bord(4px, $main);
+  }
+
+  #book-cover{
+    width: 100%;
+    text-align: center;
+    padding-bottom: $pad;
+
+    @include media($tablet){
+      width: fit-content;
+      padding: 0 $pad $pad 0;
+    }
+    img{ 
+      border: bord();
+      border-radius: $radius;
+
+      @include dimensions(265px,370px); 
+      @include media($small){ @include dimensions(100%); }
+    }//
+  }
+  #book-infos{
+    li{ 
+      list-style-type: none;
+      padding-bottom: $pad;
+      &:last-child{ 
+        font-weight: bold; 
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      }
+    } b{ text-decoration: underline; }
+
+    #form-fav{
+      padding-bottom: $pad;
+
+      button{ all: unset; }
+      button svg{ position:relative;  top:3px; }
+      button, label{ cursor: pointer; }
+    }
+  }
+
+  #book-preferences{
+    width: 100%;
+    border-bottom: bord(4px, $main);
+    padding-bottom: $pad;
+    margin-bottom: $pad;
+    
+    #form-cart{
+      @include media($tablet){ @include flex(row, nowrap); }
+    }
+    span{ font-weight: bolder; }
+    input{
+      background-color: $light;
+      border: bord();
+      border-radius: $radius;
+      padding: $pad calc($pad/2);
+    }
+    button{
+      display: block;
+      background-color: $dark;
+      color: $main;
+      font: { weight:500; } 
+      padding: $pad;
+      text-transform: uppercase;
+      flex-grow: 1;
+      width: 100%;
+
+      border: bord();
+      border-radius: $radius;
+      cursor: pointer;
+      margin-top: $pad;
+
+      @include media($tablet){
+        width: fit-content;
+        flex-grow: 1;
+        margin: { left: $pad; top: 0; }
+      }
+    }//
+  }
+  li, span, input, label, p, button{
+    @include responsive-size(12px, 19px, 21px, 16px);
+  }
+
+  // like and dislike buttons ----------------
+  #form-rate, #comment-rate{
+    padding-bottom: $pad;
+    button{
+      all: unset;
+      cursor: pointer;
+      border-right: bord();
+      padding: $pad;
+      &:last-child{ border-right: none; }
+      &:first-child{ padding-left: 0; }
+    }
+    svg{ position: relative; top: 2px; }
+  }
+  
+  
+  // comment section --------------------------
+  #comments{
+    #comment-text{ 
+      background-color: $light;
+      width: 100%;
+      font: { family: $fontText; size: 15px; }
+      padding: $pad;
+      border-radius: $radius;
+      border: bord(1px); 
+      padding-right: $pad + 24px;
+      resize: vertical;
+
+      &:focus{ 
+        outline: bord(1px);
+        box-shadow: 0px 0px 4px 2px $main;
+      }
+    }
+    #form-comment{ position: relative; }
+    #comment-sub{
+      all: unset;
+      cursor: pointer;
+      position: absolute;
+      top: $pad;
+      right: $pad;
+    }
+
+    .aComment{
+      position: relative;
+      b{ 
+        font-size: 14px;
+        background-color: $extra;
+        position: absolute;
+        top: -$pad;
+        left: $pad;
+        padding: 0 3px;
+        @include media($small){ font-size: 11px; }
+
+        span{ 
+          color: crimson; 
+          font-size: 14px;
+          @include media($small){ font-size: 11px; }
+        }
+      }
+      p{
+        border: bord();
+        border-radius: calc($radius/2) $radius*3;
+        padding: $pad*3 $pad;
+      }
+    }
+    #comment-rate{
+      background-color: $extra;
+      position: absolute;
+      padding: 0 3px;
+      bottom: -$pad;
+      left: $pad*3;
+
+      button{ border: none; padding: 0; }
+      strong{ 
+        padding-right: $pad;
+        @include responsive-size(12px, 14px, 14px, 14px);
+        &:last-child { padding: 0; }
+      }
+    }
+    //
+  }
+}

@@ -1,0 +1,283 @@
+main {
+  color: #005257;
+  background-image: url(../../media/images/bg/bg-animated-shapes.svg);
+}
+
+.error {
+  color: crimson;
+  font-weight: bold;
+  margin: 5px;
+  transform: translateY(-8px);
+  -o-transform: translateY(-8px);
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  -ms-transform: translateY(-8px);
+  font-size: 15px;
+}
+@media only screen and (max-width: 300px) {
+  .error {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 500px) {
+  .error {
+    font-size: 18px;
+  }
+}
+
+main #login-form {
+  font-family: "Nunito Sans", sans-serif;
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-items: normal;
+}
+main #login-form h2 {
+  margin: 0;
+  padding: 30px 0;
+  font-size: 50px;
+}
+@media only screen and (max-width: 300px) {
+  main #login-form h2 {
+    font-size: 38px;
+  }
+}
+main #login-form .reset-pass h2 {
+  font-size: 42px;
+}
+@media only screen and (max-width: 300px) {
+  main #login-form .reset-pass h2 {
+    font-size: 13vw;
+  }
+}
+@media only screen and (min-width: 500px) {
+  main #login-form .reset-pass h2 {
+    font-size: 50px;
+  }
+}
+main #login-form input, main #login-form button {
+  border: none;
+  outline: none;
+  background: none;
+}
+main #login-form .form {
+  background-color: #ABB981;
+  padding: 20px 7px;
+  width: 100%;
+  position: relative;
+  border-radius: 7px;
+  border: 1px inset #005257;
+}
+@media only screen and (min-width: 768px) {
+  main #login-form .form {
+    width: 650px;
+    padding: 20px;
+  }
+}
+main #login-form .form span, main #login-form .form input, main #login-form .form button, main #login-form .form select, main #login-form .form a {
+  font-size: 15px;
+}
+@media only screen and (max-width: 300px) {
+  main #login-form .form span, main #login-form .form input, main #login-form .form button, main #login-form .form select, main #login-form .form a {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 500px) {
+  main #login-form .form span, main #login-form .form input, main #login-form .form button, main #login-form .form select, main #login-form .form a {
+    font-size: 18px;
+  }
+}
+main #login-form .take-info label {
+  display: block;
+  position: relative;
+  margin-bottom: 18px;
+}
+main #login-form .take-info label:last-child {
+  margin-bottom: 7px;
+}
+main #login-form .take-info label span {
+  background-color: #ABB981;
+  font-weight: bold;
+  padding: 0 3.5px;
+  position: absolute;
+  bottom: 7px;
+  left: 5.5px;
+  transition: 300ms;
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  -moz-transition: 300ms;
+}
+main #login-form .take-info label input, main #login-form .take-info .country select, main #login-form .take-info .phone select {
+  display: block;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  border: 1px inset #005257;
+  border-radius: 3px;
+  width: 100%;
+  padding: 7px;
+  transition: box-shadow 300ms;
+  -webkit-transition: box-shadow 300ms;
+  -o-transition: box-shadow 300ms;
+  -moz-transition: box-shadow 300ms;
+}
+main #login-form .take-info label input:focus, main #login-form .take-info .country select:focus, main #login-form .take-info .phone select:focus {
+  outline: 1px inset #005257;
+  box-shadow: 0px 0px 4px 2px #BDFF00;
+}
+main #login-form .take-info label input:focus ~ span, main #login-form .take-info label input:valid ~ span, main #login-form .take-info .country select:focus ~ span, main #login-form .take-info .country select:valid ~ span, main #login-form .take-info .phone select:focus ~ span, main #login-form .take-info .phone select:valid ~ span {
+  bottom: 26px;
+  z-index: 2;
+  font-size: 12px;
+}
+@media only screen and (max-width: 300px) {
+  main #login-form .take-info label input:focus ~ span, main #login-form .take-info label input:valid ~ span, main #login-form .take-info .country select:focus ~ span, main #login-form .take-info .country select:valid ~ span, main #login-form .take-info .phone select:focus ~ span, main #login-form .take-info .phone select:valid ~ span {
+    font-size: 9px;
+    bottom: 24px;
+  }
+}
+@media only screen and (min-width: 500px) {
+  main #login-form .take-info label input:focus ~ span, main #login-form .take-info label input:valid ~ span, main #login-form .take-info .country select:focus ~ span, main #login-form .take-info .country select:valid ~ span, main #login-form .take-info .phone select:focus ~ span, main #login-form .take-info .phone select:valid ~ span {
+    font-size: 15px;
+  }
+}
+main #login-form .country-birth {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: column wrap;
+  margin-bottom: 18px;
+}
+@media only screen and (min-width: 500px) {
+  main #login-form .country-birth {
+    flex-direction: row;
+  }
+}
+@media only screen and (min-width: 500px) {
+  main #login-form .country-birth .birth {
+    margin: 0;
+  }
+}
+main #login-form .country-birth .birth input {
+  padding: 14px 7px;
+}
+@media only screen and (min-width: 500px) {
+  main #login-form .country-birth .birth input {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-right: none;
+  }
+}
+main #login-form .country-birth .country span, main #login-form .country-birth .birth span {
+  top: -8px;
+  z-index: 2;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 12px;
+}
+@media only screen and (max-width: 300px) {
+  main #login-form .country-birth .country span, main #login-form .country-birth .birth span {
+    font-size: 9px;
+    top: -5px;
+  }
+}
+@media only screen and (min-width: 500px) {
+  main #login-form .country-birth .country span, main #login-form .country-birth .birth span {
+    top: -10px;
+    font-size: 15px;
+  }
+}
+main #login-form .country-birth .country {
+  flex-grow: 1;
+  margin: 0 !important;
+}
+main #login-form .country-birth .country select {
+  display: block;
+  height: 40px;
+  font-weight: bold;
+}
+@media only screen and (min-width: 500px) {
+  main #login-form .country-birth .country select {
+    padding: 15px 7px;
+    height: auto;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+}
+main #login-form .phone {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: nowrap wrap;
+  margin-bottom: 18px;
+}
+main #login-form .phone label {
+  flex-grow: 1;
+  margin: 0 !important;
+}
+main #login-form .phone input {
+  height: 100%;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+main #login-form .phone select {
+  width: auto !important;
+  border-right: none !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  padding: 7px 0 !important;
+}
+main #login-form .country-birth select, main #login-form .phone select {
+  color: #005257;
+  cursor: pointer;
+}
+main #login-form .country-birth select option, main #login-form .phone select option {
+  color: #005257;
+  background-color: #ABB981;
+}
+main #login-form .submit {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: nowrap column;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+@media only screen and (min-width: 500px) {
+  main #login-form .submit {
+    flex-direction: row;
+  }
+}
+main #login-form .submit button {
+  display: block;
+  background-color: #005257;
+  color: #BDFF00;
+  font-weight: 500;
+  padding: 7px;
+  border-radius: 7px;
+  flex-grow: 1;
+  cursor: pointer;
+  margin-bottom: 7px;
+}
+@media only screen and (min-width: 500px) {
+  main #login-form .submit button {
+    width: 50%;
+  }
+  main #login-form .submit button:not(main #login-form .submit button:last-child) {
+    margin-right: 7px;
+  }
+}
+main #login-form .forgot-pass {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+main #login-form .forgot-pass:hover {
+  text-decoration: underline;
+}
+main #login-form .other-option {
+  text-align: center;
+}/*# sourceMappingURL=account.css.map */

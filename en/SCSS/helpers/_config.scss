@@ -1,0 +1,19 @@
+@import "import";
+ 
+*{ @include box-size; }
+
+::selection{
+  background: $dark;
+  color: $main;
+}
+body{
+  overflow-x: hidden;
+  color: $dark;
+  background-color: $light;
+  margin: 0;
+  font-family: $fontText;
+}
+a{
+  text-decoration: none;
+  color: unset;
+}

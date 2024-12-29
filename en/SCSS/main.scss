@@ -1,0 +1,314 @@
+@import "./helpers/config";
+
+// common styling of main content container
+main{
+  color: $light;
+  padding: 30px $pad;
+  background-image: url(../../media/images/bg/background.svg);
+  background-size: cover;
+}
+// common style for titles
+.aTitle{
+  text-shadow: 0px 0px 1px $main;
+  font: { family: $fontTitle; weight: 500; }
+  text-align: center;
+}
+
+// ---------------- HEADER --------------------------
+header{
+  background-color: $extra;
+  padding: $pad;
+  @include flex;
+  justify-content: space-between;
+
+  // ---------------- logo ------------------
+  #logo img{ @include dimensions(80px); }
+
+  // ---------------- header's title ------------------
+  #bigTitle{
+    font-size: 13vw;
+    order: 3; // flex-item order
+    @include perfect_center;
+    width: 100%;
+  }
+  
+  // ------------- accessibility buttons --------------
+  #accessibility{
+    width: 150px;
+
+    div{
+      img{ @include dimensions(50px); }
+      cursor: pointer;
+      text-align: center;
+    }
+    @include flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    // ---------------- language menu ----------------
+    #language{
+      position: relative;
+      
+      #langs{
+        background: $light;
+        position: absolute;
+        right: 0;
+        z-index: 10;
+        border-radius: 2px;
+        width: 160px;
+        border: bord(1px);
+        
+        // fade in effect
+        visibility: hidden;
+        opacity: 0;
+        @include transition(opacity 200ms);
+        
+        // arrow pointing towards the icon
+        &::before{
+          content: "";
+          border: {
+            left: bord(7px, transparent); 
+            right: bord(7px, transparent); 
+            top: bord(7px, transparent); 
+            bottom: bord(7px, $light);
+          }
+          position: absolute;
+          top: -14px;
+          right: 7px;
+        }
+      }
+      // make the language menu visible
+      &:hover #langs{ 
+        visibility: visible; 
+        opacity: 1;
+      }
+      
+      // style language menu
+      #langs div{ 
+        padding: $pad*1.6 $pad*2.5; 
+        font-weight: bold;
+        text-align: left;
+
+        img{ 
+          @include dimensions(25px, 25px);
+          position: relative;
+          top: 5.5px;
+        }
+        span{ font-size: 16px; }
+
+        &:hover{ background-color: $extra; }
+        &:not(&:last-child){ border-bottom: bord(1px); }
+      }
+    }
+  }
+}
+// ------------------ HEADER END -----------------
+
+// ---------------- Navigation Bar -----------------
+#navBar{
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  border-bottom: bord(4px, $c: $main);
+  padding: $pad 0;
+  background-color: $extra;
+
+  @include flex;
+  justify-content: space-between;
+
+  section div {
+    font: { size:20px; weight:bold; }
+    border-right: bord();
+    padding: 0 $pad;
+    cursor: pointer;
+
+    img{ @include dimensions(25px); }
+  }
+  //-------------- home & search button ---------------
+  #leftNav span{ 
+    display: none;
+    position: relative; 
+    bottom: 2px;
+  }
+  // ------------- side flexes --------------
+  #rightNav, #leftNav { @include flex($wrap: nowrap); }
+
+  // ------------ coin balance --------------
+  #coinBalance label{
+    position: relative;
+    bottom: 3px;
+  }
+  #sideMenu{ border: none; }
+}
+// --------------- Navigation Bar End -----------------
+
+// ------------- search Layer ---------------
+#searchLayer{
+  background-color: rgba(0, 82, 87, 0.7);
+  position: fixed;
+  top: 0;
+  z-index: 11;
+  @include dimensions(100%, 100%);
+  
+  // fade in effect
+  visibility: hidden;
+  opacity: 0;
+  @include transition(opacity 300ms);
+  
+  h1{
+    background-color: $extra;
+    font-size: 40px;
+    margin: 0;
+    padding: 30px 0;
+    border-bottom: bord(4px, $main);
+  }
+  span{
+    position: absolute;
+    z-index: 12;
+    top: 0;
+    right: 10px;
+    font: { size:40px; weight: bold; }
+    cursor: pointer;
+  }
+  .searchPart{
+    position: relative;
+    padding-top: 10px;
+    @include flex;
+    justify-content: space-between;
+
+    button[type="submit"]{
+      all: unset;
+      background-color: $light;
+      padding: 0 $pad;
+      height: 36px;
+      font: { size:12px; weight:bold; }
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+
+      border: {
+        top-right-radius: $radius;
+        bottom-right-radius: $radius;
+      }
+      border: bord();
+      border-left: none;
+    }
+  }
+
+  img{
+    @include dimensions(25px);
+    @include inputImage(17px, 7px); 
+    cursor: pointer;
+  }
+  label{ 
+    height: fit-content;
+    flex-grow: 1;
+  }
+
+  input{ 
+    display: block;
+    background-color: $light;
+    color: $dark;
+    font-size: 12px;
+    padding-left: 35px;
+    @include dimensions(100%, 40px);
+
+    border-radius: $radius;
+    border-color: $dark;
+    border-right: none;
+    @include transition(box-shadow 300ms);
+
+    &:focus{ box-shadow: 0px 0px 4px 2px $main; }
+  }
+  select{
+    display: block;
+    background-color: $light;
+    color: $dark;
+    margin: 5px auto 0;
+    padding: 3px;
+    font: { size:20px; weight:bold; }
+
+    height: 40px;
+    border: bord();
+    border-radius: $radius;
+    cursor: pointer;
+  }
+} 
+// ------------- search Layer End ---------------
+
+// --------------- side Menu ----------------
+#menu{
+  background-color: $extra;
+  position: fixed;
+  top: 0;
+  z-index: 11;
+  
+  @include dimensions(100%, 0); // max H = 406px
+  visibility: hidden;
+  overflow-y: auto;
+  @include transition(500ms);
+
+  img{ @include dimensions(25px, 25px); }
+  
+  section{
+    background-color: $extra;
+    font-size: 45px;
+    padding: 20px 0;
+    border-bottom: bord(4px, $main);
+  }
+
+  #closeMenu{
+    position: absolute;
+    right: 15px;
+    padding: 0 $pad;
+    font-size: 40px;
+    cursor: pointer;
+  }
+
+  a{
+    display: block;
+    background-color: $light;
+    text-align: center;
+    font-size: 24px;
+    width: 100%;
+    padding: $pad;
+    border-bottom: bord($c: $extra);
+
+    &:last-child{ border: none; }
+    &:hover{ background-color: $extra; }
+  } 
+}
+// --------------- FOOTER -------------------
+footer{
+  background-color: $extra;
+  padding: $pad $pad*2;
+  border-top: bord(4px, solid, $main);
+  
+  @include flex(column);
+  justify-content: space-between;
+
+  // title
+  h1{ 
+    margin: 0;
+    font-size: 33px;
+    text-align: left !important;
+  }
+  img{ 
+    width: 40px; 
+    height: 40px;
+    @include transform(translateY(10px))
+  }
+  ul{
+    list-style-type: none;
+    padding-left: 0;
+    li{ font: { weight:600; size:20px; } }
+  }
+  // 
+  #rightFoot{
+    a:hover{ text-decoration: underline $dark; }
+  }
+}
+// --------------- FOOTER END -------------------
+
+// add responsiveness to the page
+@import './helpers/responsive-main';

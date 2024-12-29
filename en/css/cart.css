@@ -1,0 +1,180 @@
+#product__wrapper {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.forCheck {
+  width: 100%;
+}
+
+.goToCheckout {
+  background-color: #ABB981;
+  color: #005257;
+  height: auto;
+  font-family: "Imprint MT Shadow", Georgia, serif;
+  font-weight: 900;
+  font-size: 20px;
+  border: 1px inset #BDFF00;
+  border-radius: 7px;
+  text-align: center;
+  transition: 200ms;
+  -webkit-transition: 200ms;
+  -o-transition: 200ms;
+  -moz-transition: 200ms;
+  cursor: pointer;
+  position: absolute;
+  left: 1.5%;
+  top: 47px;
+  width: auto;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+}
+.goToCheckout:hover {
+  background-color: #005257;
+  color: #BDFF00;
+  border-color: #BDFF00;
+}
+@media only screen and (min-width: 500px) {
+  .goToCheckout {
+    left: 3px;
+  }
+}
+.goToCheckout a {
+  display: block;
+  padding: 10.5px;
+}
+
+#cart-items {
+  padding: 7px 0;
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+.item {
+  color: #005257;
+  background-color: #ABB981;
+  border: 1px inset #BDFF00;
+  width: 97%;
+  margin: 7px 0;
+  overflow: hidden;
+  border-radius: 7px;
+  /*--- REMOVE BUTTON ---*/
+}
+@media only screen and (min-width: 500px) {
+  .item {
+    margin: 7px;
+  }
+}
+@media only screen and (min-width: 500px) {
+  .item {
+    width: 350px;
+  }
+}
+.item .labels {
+  font-size: 20px;
+  font-weight: bold;
+}
+.item .price {
+  font-size: 22px;
+  font-weight: bold;
+}
+.item .image img {
+  width: 100%;
+  height: auto;
+}
+@media only screen and (min-width: 500px) {
+  .item .image img {
+    height: 430px;
+  }
+}
+.item .quantity {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+}
+.item .quantity .quanDesign {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: nowrap wrap;
+  justify-content: flex-end;
+}
+.item .quantity .quanDesign .quantity__modifier {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #ABB981;
+  border: 1px solid #005257;
+  height: 40px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: 200ms;
+  -webkit-transition: 200ms;
+  -o-transition: 200ms;
+  -moz-transition: 200ms;
+}
+.item .quantity .quanDesign .quantity__modifier:not(input.quantity__modifier) {
+  cursor: pointer;
+}
+.item .quantity .quanDesign .quantity__modifier:not(input.quantity__modifier):hover {
+  background-color: #005257;
+  color: #BDFF00;
+}
+.item .quantity .quanDesign .quantity__modifier:first-child {
+  border-radius: 7px 0 0 7px;
+}
+.item .quantity .quanDesign input.quantity__modifier {
+  width: 60px;
+  border-width: 1px 0;
+}
+.item .quantity .quanDesign .quantity__modifier:last-child {
+  border-radius: 0 7px 7px 0;
+}
+.item article:not(.image) {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.item article {
+  padding: 10px 0;
+}
+.item #remove {
+  transition: 200ms;
+  -webkit-transition: 200ms;
+  -o-transition: 200ms;
+  -moz-transition: 200ms;
+  font-weight: 900;
+  font-size: 30px;
+  cursor: pointer;
+}
+.item #remove:hover {
+  background: #005257;
+  color: #BDFF00;
+}
+.item article[class] {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  border-bottom: 1px inset #005257;
+  padding: 10px;
+}
+.item article[class] div:not(.labels, .quanDesign div) {
+  text-align: right;
+  flex-grow: 1;
+}
+.item .description, .item .one-price {
+  justify-content: space-around !important;
+}
+.item article[class$=-price] {
+  display: block !important;
+}/*# sourceMappingURL=cart.css.map */

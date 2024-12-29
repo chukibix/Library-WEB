@@ -1,0 +1,36 @@
+@import "./helpers/import";
+
+main{
+  background-image: url(../../media/images/bg/contact-us-bg.jpg);
+
+  input, button, textarea{
+    background-color: $light;
+    color: $dark;
+    padding: $pad;
+    margin-bottom: 10px;
+    border: bord();
+    border-radius: $radius;
+
+    // font-size update with different width
+    @include responsive-size(12px, 18px, 20px, 16px);
+  }
+  input{
+    width: 100%;
+    @include media($tablet){ width: 600px; }
+  }
+  textarea{
+    @include dimensions(100%, 400px);
+    font-family: $fontText;
+
+    @include media($tablet){ width: 90%; }
+    @include media($laptop){ width: 80%; }
+    @include media($desktop){ width: 70%; }
+  }
+  button{ cursor: pointer; }
+
+  input, textarea{ 
+    @include transition(box-shadow 200ms);
+    &:focus{ box-shadow: 0px 0px 4px 2px $main; }
+  }
+  #message{ width: 550px; }
+}
